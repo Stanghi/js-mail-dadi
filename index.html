@@ -15,7 +15,40 @@
     <body>
 
         <!-- MAIN -->
-        <main></main>
+        <main>
+            <div class="ms-container d-flex flex-column align-items-center justify-content-center">
+                <div class="card mb-5">
+                    <div class="card-header fw-bold">Mail checker</div>
+                    <form class="p-3 text-center">
+                        <div class="input-group flex-nowrap mb-3">
+                            <span class="input-group-text" id="addon-wrapping">@</span>
+                            <input id="mail-user" type="text" class="form-control" placeholder="Inserisci mail" aria-label="Username" aria-describedby="addon-wrapping">
+                        </div>
+                        <button id="btn-input" type="button" class="btn btn-primary mb-3">Check</button>
+                        
+                        <div class="output-mail hide">
+                            <ul class="list-group mb-3">
+                                <li id="1" class="list-group-item"></li>
+                                <li id="2" class="list-group-item"></li>
+                            </ul>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="alert alert-danger text-center mb-1" role="alert">
+                    Ciao Stefano/Loris/Alfredo :) <br>i dadi si vedono solo in console per ora.. questo weekend farò la parte grafica
+                  </div>
+
+                <div class="card mb-5">
+                    <div class="card-header fw-bold">Dadi game</div>
+                    <form class="p-3 d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary">Play</button>
+                    </form>
+                </div>
+            </div>
+
+        </main>
 
         <script src="assets/js/script.js"></script>
     </body>

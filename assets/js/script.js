@@ -4,30 +4,42 @@ Chiedi all’utente la sua email,
 controlla che sia nella lista di chi può accedere,
 stampa un messaggio appropriato sull’esito del controllo.
 */
-console.log("----- MAIL -----");
 
 const listaMail = ['stanghi@gmail.com', 'lando@gmail.com', 'max@gmail.com'];
 let found = false;
 
-const mailInput = prompt('Inserisci la tua mail')
-console.log('Mail inserita dall\' utente --> ',mailInput);
+const outputMail = document.querySelector('.output-mail');
+let outputMailInvisible = true;
 
-for (let i = 0; i < listaMail.length; i++){
-    if (mailInput === listaMail[i]){
-        found = true;
-        break;
+const btnInput = document.getElementById('btn-input');
+btnInput.addEventListener('click', function(){
+
+    if (outputMailInvisible){
+        outputMail.classList.remove('hide');
+    }
+
+    const mailInput = document.getElementById('mail-user').value;
+    document.getElementById('1').innerHTML = `Mail inserita: <strong> ${mailInput} </strong>`;
+
+    for (let i = 0; i < listaMail.length; i++){
+        if (mailInput === listaMail[i]){
+            found = true;
+            break;
+        }
+        else{
+            found = false;
+        }
+    }
+
+    if (found){
+        console.log();
+        document.getElementById('2').innerHTML = `SI! è compresa`;
     }
     else{
-        found = false;
+        document.getElementById('2').innerHTML = `NO! non è compresa`;
     }
-}
 
-if (found){
-    console.log(`SI! "${mailInput}" è compresa`);
-}
-else{
-    console.log(`NO! "${mailInput}" non è compresa`);
-}
+});
 
 // DADI
 /* Consegna:
