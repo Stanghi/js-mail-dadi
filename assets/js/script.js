@@ -19,26 +19,31 @@ btnInput.addEventListener('click', function(){
     }
 
     const mailInput = document.getElementById('mail-user').value;
-    document.getElementById('1').innerHTML = `Mail inserita: <strong> ${mailInput} </strong>`;
 
-    for (let i = 0; i < listaMail.length; i++){
-        if (mailInput === listaMail[i]){
-            found = true;
-            break;
+    if (mailInput !== ""){
+        for (let i = 0; i < listaMail.length; i++){
+            if (mailInput === listaMail[i]){
+                found = true;
+                break;
+            }
+            else{
+                found = false;
+            }
+        }
+    
+        if (found){
+            console.log();
+            document.getElementById('output').innerHTML = `<strong>SI!</strong> è compresa`;
         }
         else{
-            found = false;
+            document.getElementById('output').innerHTML = `<strong>NO!</strong> non è compresa`;
         }
     }
-
-    if (found){
-        console.log();
-        document.getElementById('2').innerHTML = `SI! è compresa`;
-    }
     else{
-        document.getElementById('2').innerHTML = `NO! non è compresa`;
-    }
+        document.getElementById('output').innerHTML = `<strong>Nessuna mail fornita</strong>`;
 
+    }
+    
 });
 
 // DADI
@@ -54,7 +59,7 @@ console.log("USER",numberUser);
 console.log("PC",numberPC);
 
 if (numberUser > numberPC){
-    console.log("User vince");
+    console.log("USER vince");
 }
 else if (numberUser < numberPC){
     console.log("PC vince");
